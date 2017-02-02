@@ -12,7 +12,7 @@ func main(){
 	// Variant 1 ( can consume n arguments )
 	fmt.Println(strings.Join(os.Args[0:], " "))
 
-	// Variant 2 ( can consue 2 args )
+	// Variant 2 ( can consume 2 args )
 	val := os.Args[0];
 	// convert val to boolean
 	_, err := strconv.ParseBool(val)
