@@ -56,6 +56,7 @@ func askForArguments(s string) []string {
 			continue
 		}
 
+		response = strings.TrimRight(response, "\n")
 		args = strings.Split(response, " ")
 		if len(args) > 0 {
 			break
