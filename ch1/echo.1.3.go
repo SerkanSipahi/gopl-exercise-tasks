@@ -1,10 +1,20 @@
 package main
 
+/**
+ * How to build:
+ * go build echo.1.3.go
+ *
+ * How to run:
+ * ./echo.1.3 a b c
+ *
+ */
+
 import (
 	"strings"
 	"os"
 	"time"
 	"fmt"
+	"bufio"
 )
 
 func Echo1(args []string) string {
@@ -30,11 +40,37 @@ func Echo3(args []string) string {
 	return result
 }
 
+func askForArguments(s string) []string {
+
+	reader := bufio.NewReader(os.Stdin)
+	args := []string{}
+
+	for {
+
+		fmt.Println(s)
+		response, err := reader.ReadString('\n')
+		if err != nil {
+			fmt.Println(err)
+		}
+		if response == "\n" {
+			continue
+		}
+
+		args = strings.Split(response, " ")
+		if len(args) > 0 {
+			break
+		}
+
+	}
+
+	return args
+}
+
 func main(){
 
 	args := os.Args
-	if len(args) == 0 {
-
+	if len(args[0:]) == 1 {
+		args = askForArguments("Please provide at least one argument")
 	}
 
 	/**
@@ -62,8 +98,4 @@ func main(){
 		Echo3(args)
 	}
 	fmt.Printf("%.2fs\n", time.Since(start).Seconds())
-
-	/**
-	 * Book Section 11.4 with benchmark
-	 */
 }
