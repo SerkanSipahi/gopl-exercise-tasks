@@ -1,0 +1,69 @@
+package main
+
+import (
+	"strings"
+	"os"
+	"time"
+	"fmt"
+)
+
+func Echo1(args []string) string {
+
+	result := args[0] + " " + args[0]
+	return result
+
+}
+
+func Echo2(args []string) string {
+
+	result := strings.Join(args[0:], " ")
+	return result
+
+}
+
+func Echo3(args []string) string {
+
+	result := ""
+	for index, value := range args[0:] {
+		result += fmt.Sprintf("%d %s\n", index, value)
+	}
+	return result
+}
+
+func main(){
+
+	args := os.Args
+	if len(args) == 0 {
+
+	}
+
+	/**
+	 * Book Section 1.6 with time package
+	 */
+	count := 5000000
+
+	// Echo1
+	start := time.Now()
+	for i :=0; i < count; i++ {
+		Echo1(args)
+	}
+	fmt.Printf("%.2fs\n", time.Since(start).Seconds())
+
+	// Echo2
+	start = time.Now()
+	for i :=0; i < count; i++ {
+		Echo2(args)
+	}
+	fmt.Printf("%.2fs\n", time.Since(start).Seconds())
+
+	// Echo3
+	start = time.Now()
+	for i :=0; i < count; i++ {
+		Echo3(args)
+	}
+	fmt.Printf("%.2fs\n", time.Since(start).Seconds())
+
+	/**
+	 * Book Section 11.4 with benchmark
+	 */
+}
