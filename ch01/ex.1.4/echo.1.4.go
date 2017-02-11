@@ -1,5 +1,11 @@
 package main
 
+/**
+ * @Howto:
+ * 1.) go build echo.1.4.go
+ * 2.) ./echo.1.4
+ */
+
 import (
 	"os"
 	"fmt"
