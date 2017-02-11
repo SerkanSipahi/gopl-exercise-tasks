@@ -42,19 +42,13 @@ func Echo3(args []string) string {
 
 func askForArguments(s string) []string {
 
-	reader := bufio.NewReader(os.Stdin)
-	args := []string{}
+	input := bufio.NewScanner(os.Stdin)
+	args  := []string{}
 
-	for {
+	for input.Scan() {
 
 		fmt.Println(s)
-		response, err := reader.ReadString('\n')
-		if err != nil {
-			fmt.Println(err)
-		}
-		if response == "\n" {
-			continue
-		}
+		response := input.Text()
 
 		response = strings.TrimRight(response, "\n")
 		args = strings.Split(response, " ")
