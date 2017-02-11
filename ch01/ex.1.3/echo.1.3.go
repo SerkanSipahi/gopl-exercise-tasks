@@ -1,12 +1,12 @@
 package main
 
 /**
- * How to build:
- * go build echo.1.3.go
+ * @Howto:
+ * 1.) go build echo.1.3.go
+ * 2.) ./echo.1.3 your args here
  *
- * How to run:
- * ./echo.1.3 a b c
- *
+ * @Notes:
+ * 1.) with "cmd + x" or "ctrl + x" for stopping the program
  */
 
 import (

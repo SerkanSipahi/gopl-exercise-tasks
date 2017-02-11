@@ -2,6 +2,11 @@ package main
 
 import "testing"
 
+/**
+ * @Howto:
+ * 1.) go test -bench=.
+ */
+
 var (
 	args = []string{"a", "b", "c"}
 )

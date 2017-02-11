@@ -9,6 +9,15 @@ import (
 
 func main(){
 
+	/**
+	 * @Howto:
+	 * 1.) go build echo.1.1.go
+	 * 2.) ./echo.1.1 your args here
+	 *
+	 * @Notes:
+	 * 1.) with "cmd + x" or "ctrl + x" for stopping the program
+	 */
+
 	// Variant 1 ( can consume n arguments )
 	fmt.Println(strings.Join(os.Args[0:], " "))
 
