@@ -1,5 +1,11 @@
 package main
 
+/**
+ * @Howto:
+ * 1.) go build echo.1.5.go
+ * 2.) ./echo.1.5 > my-pic.go
+ */
+
 import (
 	"image"
 	"image/color"
