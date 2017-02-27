@@ -4,6 +4,10 @@ This repository contains the solutions of the exercises in the book `Go Programm
 
 Pull requests are welcome.
 
+## Different/Other Solutions
+
+https://github.com/vinceyuan/gopl-solutions
+
 ## License
 
 ### MIT License
