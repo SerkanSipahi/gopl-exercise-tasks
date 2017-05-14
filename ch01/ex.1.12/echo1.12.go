@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/labstack/gommon/log"
 	"image"
 	"image/color"
 	"image/gif"
@@ -8,22 +9,21 @@ import (
 	"math"
 	"math/rand"
 	"net/http"
-	"github.com/labstack/gommon/log"
 	"strconv"
 )
 
 var palette = []color.Color{color.White, color.Black}
 
-const(
+const (
 	whiteIndex = 0
 	blackIndex = 1
 )
 
 func main() {
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
-		if r.RequestURI == "/favicon.ico"{
+		if r.RequestURI == "/favicon.ico" {
 			return
 		}
 
@@ -34,7 +34,6 @@ func main() {
 			}
 		}
 
-
 		lissajous(w, cycles)
 	})
 
@@ -42,9 +41,9 @@ func main() {
 
 }
 
-func lissajous(out io.Writer, cycles int){
+func lissajous(out io.Writer, cycles int) {
 
-	const(
+	const (
 		res     = 0.001
 		size    = 100
 		nframes = 64
@@ -57,7 +56,7 @@ func lissajous(out io.Writer, cycles int){
 
 	for i := 0; i < nframes; i++ {
 
-		rect := image.Rect(0,0,2*size+1, 2*size+1)
+		rect := image.Rect(0, 0, 2*size+1, 2*size+1)
 		img := image.NewPaletted(rect, palette)
 
 		for t := 0.0; t < float64(cycles)*2*math.Pi; t += res {
@@ -66,7 +65,7 @@ func lissajous(out io.Writer, cycles int){
 			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5), blackIndex)
 		}
 
-		phase +=0.1
+		phase += 0.1
 		anim.Delay = append(anim.Delay, delay)
 		anim.Image = append(anim.Image, img)
 	}
