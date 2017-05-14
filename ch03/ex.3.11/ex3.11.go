@@ -43,5 +43,5 @@ func comma(value string, sep ...rune) string {
 
 func main() {
 	println(comma("45638522.34232874", ',')) // 45,638,522.34232874
-	println(comma("4563852234232.874", ',')) // 4,563,852,234,232.874
+	println(comma("4563852234232.874", ' ')) // 4 563 852 234 232.874
 }
