@@ -23,6 +23,7 @@ func comma(value string, sep ...rune) string {
 		commaIndex = 3 - (floatPoint % 3)
 	} else {
 		commaIndex = 3 - (l % 3)
+		floatPoint = l + 1
 	}
 
 	if commaIndex == 3 {
@@ -44,4 +45,6 @@ func comma(value string, sep ...rune) string {
 func main() {
 	println(comma("45638522.34232874", ',')) // 45,638,522.34232874
 	println(comma("4563852234232.874", ' ')) // 4 563 852 234 232.874
+	println(comma("32333", ','))             // 32,333
+	println(comma("32332343", ','))          // 32,332,343
 }
