@@ -6,6 +6,7 @@ import (
 
 // Solution:
 // http://stackoverflow.com/questions/13020308/how-to-fmt-printf-an-integer-with-thousands-comma#26939091
+// @Fixme: add tests and benchmark tests
 
 func comma(s string) string {
 

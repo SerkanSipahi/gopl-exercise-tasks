@@ -7,10 +7,11 @@ import (
 
 // Solution over stackoverflow but extended for exercise:
 // http://stackoverflow.com/questions/13020308/how-to-fmt-printf-an-integer-with-thousands-comma#26939091
+// @Fixme: add tests and benchmark tests
 
 func comma(value string, sep ...rune) string {
 
-	_sep := ','
+	var _sep rune = ','
 	if len(sep) == 1 {
 		_sep = sep[0]
 	}
