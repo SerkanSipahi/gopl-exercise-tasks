@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-// I have tried to resolve this exercise according ex4.1 but it was to complicated for me.
+// I have tried to resolve this exercise according ex4.1 (The Go Programming Language - Alan A. A. Donovan) but it was to complicated for me.
 // I found a solution in https://github.com/SerkanSipahi/gopl-solutions/blob/master/ch04/ex4.2/ex4.2.go (without comments)
 // and tries to understand what going on in init() and diffBits() see my comments
 
